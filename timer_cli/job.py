@@ -152,7 +152,7 @@ def _get_job_result(job_json: dict) -> Optional[str]:
     if "results" not in job_json:
         return None
     last_result = "RUN COMPLETE"
-    job_results = job_json["results"]
+    job_results = job_json["results"]["data"]
     if len(job_results) == 0:
         last_result = "NOT RUN"
     else:
